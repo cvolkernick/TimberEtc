@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.google.zxing.Result;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
+import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity implements PermissionManager.IPermissionManager, ZXingScannerView.ResultHandler {
 
@@ -27,6 +28,12 @@ public class MainActivity extends AppCompatActivity implements PermissionManager
 
         permissionManager = new PermissionManager(this);
         permissionManager.checkPermission();
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(new Timber.DebugTree());
+        }
+
+        Timber.d("Initialized");
     }
 
     public void scan(View view) {
@@ -54,5 +61,9 @@ public class MainActivity extends AppCompatActivity implements PermissionManager
     @Override
     public void onPermissionResult(boolean isGranted) {
         Log.d(TAG, "onPermissionResult: ");
+    }
+
+    public void runCanary(View view) {
+        Log.d(TAG, "runCanary: ");
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_gravity="center"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,8 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Scan"
+        android:background="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
+        android:onClick="scan" />
+<!--
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Leak Canary"
         android:background="@color/colorPrimary"
         android:textColor="@color/colorAccent"
-        android:onClick="scan" />
-
+        android:onClick="runCanary"/>
+-->
 </LinearLayout>
